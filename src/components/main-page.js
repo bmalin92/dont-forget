@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button } from 'react-native';
 import Notification from './notification';
+import { Card, ListItem } from 'react-native-elements';
 
 export default class MainPage extends Component {
   constructor(props){
@@ -38,7 +39,19 @@ export default class MainPage extends Component {
     return (
       <View>
         <Text>This is a list of notifications</Text>
-        {notifications}
+        <Card containerStyle={{padding: 0}} >
+          {
+            this.state.notifications.map((notification, i) => {
+              return (
+                <ListItem
+                  key={i}
+                  title={`${notification.title}  -  ${notification.frequency}`}
+                  subtitle={notification.days}
+                />
+              );
+            })
+          }
+        </Card>
         <Button 
           onPress={() => this.props.navigation.navigate('AddNotification')} 
           title="Add Notification"
