@@ -11,10 +11,10 @@ export default class MainPage extends Component {
         {
           title: 'Drink Water',
           message: 'Drink a glass of water or you are going to die of dehydration in five minutes',
-          days: 'Mon, Tues',
+          days: ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
           startTime: 9,
           endTime: 17,
-          frequency: '45 minutes'
+          frequency: 'Every 45 minutes'
         }
       ]
     }
@@ -46,7 +46,7 @@ export default class MainPage extends Component {
                 <ListItem
                   key={i}
                   title={`${notification.title}  -  ${notification.frequency}`}
-                  subtitle={notification.days}
+                  subtitle={notification.days.join(" - ")}
                 />
               );
             })
