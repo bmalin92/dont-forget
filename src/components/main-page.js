@@ -38,7 +38,7 @@ export default class MainPage extends Component {
     })
     return (
       <View>
-        <Text>This is a list of notifications</Text>
+        <Text>Test: This is a list of notifications</Text>
         <Card containerStyle={{padding: 0}} >
           {
             this.state.notifications.map((notification, i) => {
