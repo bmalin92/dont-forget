@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Form, Item, Input, Label } from 'native-base';
 import { Button } from 'react-native';
+import TimePicker from './time-picker';
 
 
 export default class AddNotification extends Component {
@@ -32,11 +33,11 @@ export default class AddNotification extends Component {
             </Item>
             <Item fixedLabel last>
               <Label>Start Time</Label>
-              <Input placeholder="9:00AM"/>
+              <TimePicker />
             </Item>
             <Item fixedLabel last>
               <Label>End Time</Label>
-              <Input placeholder="5:00PM"/>
+              <TimePicker />
             </Item>
             <Item fixedLabel last>
               <Label>Frequency</Label>
